@@ -7,6 +7,7 @@ public class Day4 {
         Scanner scanner = new Scanner(System.in);
         ArrayList<String> currentPairs = new ArrayList<>();
         int countValid = 0;
+        int countValid2 = 0;
 
         while (scanner.hasNext()) {
             String line = scanner.nextLine();
@@ -15,6 +16,9 @@ public class Day4 {
                 passport.parse(currentPairs);
                 if (passport.requiredFieldsPresent()) {
                     countValid++;
+                }
+                if (passport.allFieldsValid()) {
+                    countValid2++;
                 }
                 currentPairs = new ArrayList<>();
                 continue;
@@ -27,7 +31,11 @@ public class Day4 {
         if (passport.requiredFieldsPresent()) {
             countValid++;
         }
+        if (passport.allFieldsValid()) {
+            countValid2++;
+        }
 
         System.out.println("Part 1 Solution: " + countValid);
+        System.out.println("Part 2 Solution: " + countValid2);
     }
 }

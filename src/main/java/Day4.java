@@ -13,7 +13,7 @@ public class Day4 {
             if (line.equals("")) {
                 Passport passport = new Passport();
                 passport.parse(currentPairs);
-                if (passport.valid()) {
+                if (passport.requiredFieldsPresent()) {
                     countValid++;
                 }
                 currentPairs = new ArrayList<>();
@@ -24,7 +24,7 @@ public class Day4 {
 
         Passport passport = new Passport();
         passport.parse(currentPairs);
-        if (passport.valid()) {
+        if (passport.requiredFieldsPresent()) {
             countValid++;
         }
 

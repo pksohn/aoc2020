@@ -17,7 +17,7 @@ public class Passport {
         }
     }
 
-    public boolean valid() {
+    public boolean requiredFieldsPresent() {
         for (String key : required) {
             if (attributes.get(key) == null) {
                 return false;
